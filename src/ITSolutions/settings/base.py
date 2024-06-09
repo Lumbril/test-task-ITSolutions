@@ -59,6 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'routers'
+AUTH_USER_MODEL = 'api.User'
 
 TEMPLATES = [
     {

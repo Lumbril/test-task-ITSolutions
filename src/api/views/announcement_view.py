@@ -1,4 +1,5 @@
 from django.utils.decorators import method_decorator
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import GenericViewSet
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status, mixins
@@ -27,3 +28,4 @@ class AnnouncementView(mixins.ListModelMixin,
     queryset = Announcement.objects.all()
     serializer_class = AnnouncementSerializer
     lookup_field = 'id_announcement'
+    permission_classes = [IsAuthenticated]
